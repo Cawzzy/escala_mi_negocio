@@ -1,4 +1,4 @@
 ---
-title: Welcome to my blog
+title: Escala mi Negocio - Tu camino a mas ingresos con la IA
 ---
 

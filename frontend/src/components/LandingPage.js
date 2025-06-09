@@ -22,7 +22,8 @@ import {
   Instagram,
   MessageCircle,
   Menu,
-  X
+  X,
+  Calendar
 } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 

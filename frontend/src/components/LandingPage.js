@@ -255,34 +255,287 @@ const HeroSection = () => {
   );
 };
 
+// Solutions Section Component
+const SolutionsSection = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+
+  const solutions = [
+    {
+      icon: Bot,
+      title: "Agentes con IA",
+      description: "Automatiza atención al cliente con chatbots conectados a la lógica del negocio.",
+      features: ["Respuestas 24/7", "Integración CRM", "Aprendizaje continuo"],
+      image: "https://images.pexels.com/photos/8728559/pexels-photo-8728559.jpeg"
+    },
+    {
+      icon: Zap,
+      title: "Automatizaciones Inteligentes",
+      description: "Conecta herramientas como Gmail, WhatsApp, Google Sheets.",
+      features: ["Flujos automáticos", "Sincronización real", "Alertas inteligentes"],
+      image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b"
+    },
+    {
+      icon: Code2,
+      title: "Desarrollo sin Código",
+      description: "Diseña flujos internos y tableros sin programar.",
+      features: ["Interfaz visual", "Plantillas listas", "Escalabilidad total"],
+      image: "https://images.unsplash.com/photo-1495576775051-8af0d10f19b1"
+    }
+  ];
+
+  return (
+    <section id="solutions" ref={ref} className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Nuestras <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Soluciones</span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Transformamos tu negocio con tecnología de vanguardia, sin complicaciones técnicas
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {solutions.map((solution, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100"
+            >
+              {/* Background Image */}
+              <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
+                <img src={solution.image} alt="" className="w-full h-full object-cover" />
+              </div>
+
+              <div className="relative p-8">
+                <div className="bg-gradient-to-r from-blue-600 to-indigo-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <solution.icon className="w-8 h-8 text-white" />
+                </div>
+
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{solution.title}</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">{solution.description}</p>
+
+                <ul className="space-y-2 mb-6">
+                  {solution.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                >
+                  Más Información
+                </motion.button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Benefits Section Component
+const BenefitsSection = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+
+  const benefits = [
+    {
+      icon: Clock,
+      title: "Implementación rápida",
+      description: "Resultados visibles en menos de 2 semanas"
+    },
+    {
+      icon: Code2,
+      title: "Sin necesidad de programar",
+      description: "Soluciones no-code para máxima flexibilidad"
+    },
+    {
+      icon: Users,
+      title: "Soporte personalizado",
+      description: "Acompañamiento completo en cada paso"
+    },
+    {
+      icon: TrendingUp,
+      title: "Escalable con tu negocio",
+      description: "Crece sin límites tecnológicos"
+    }
+  ];
+
+  return (
+    <section id="benefits" ref={ref} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            ¿Por qué elegir <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">EscalaIA</span>?
+          </h2>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {benefits.map((benefit, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className="text-center group"
+            >
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-2">
+                <div className="bg-gradient-to-r from-blue-600 to-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <benefit.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Testimonials Section Component
+const TestimonialsSection = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+
+  const testimonials = [
+    {
+      name: "Ana Ruiz",
+      company: "ConectaPYME",
+      image: "https://images.pexels.com/photos/7616608/pexels-photo-7616608.jpeg",
+      text: "Reducimos el tiempo operativo un 60% en 3 semanas. El equipo de EscalaIA nos acompañó en cada paso.",
+      rating: 5
+    },
+    {
+      name: "Carlos Mendoza",
+      company: "TechSolutions",
+      image: "https://images.pexels.com/photos/7277960/pexels-photo-7277960.jpeg",
+      text: "La automatización de nuestros procesos de ventas aumentó nuestros ingresos en un 40%. Increíble ROI.",
+      rating: 5
+    },
+    {
+      name: "María González",
+      company: "Digital Marketing Pro",
+      image: "https://images.pexels.com/photos/7616608/pexels-photo-7616608.jpeg",
+      text: "Implementación súper rápida y soporte excepcional. Ahora podemos enfocarnos en crecer el negocio.",
+      rating: 5
+    }
+  ];
+
+  return (
+    <section ref={ref} className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Lo que dicen nuestros <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">clientes</span>
+          </h2>
+        </motion.div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-gray-100"
+            >
+              <div className="flex items-center mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              
+              <Quote className="w-8 h-8 text-blue-600 mb-4" />
+              
+              <p className="text-gray-700 mb-6 leading-relaxed">{testimonial.text}</p>
+              
+              <div className="flex items-center">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                  <p className="text-gray-600 text-sm">{testimonial.company}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const LandingPage = () => {
+  useEffect(() => {
+    // Chatwoot Widget Script
+    const script = document.createElement('script');
+    script.innerHTML = `
+      (function(d,t) {
+        var BASE_URL="https://app.chatwoot.com";
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
+            websiteToken: 'SSTs1ZUx61iwNxxRktRyAhCA',
+            baseUrl: BASE_URL
+          });
+        }
+      })(document,"script");
+    `;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="font-inter bg-gray-50">
       <Header />
       <HeroSection />
+      <SolutionsSection />
+      <BenefitsSection />
+      <TestimonialsSection />
       <FloatingCTA />
-      
-      {/* Chatwoot Widget Script */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function(d,t) {
-              var BASE_URL="https://app.chatwoot.com";
-              var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-              g.src=BASE_URL+"/packs/js/sdk.js";
-              g.defer = true;
-              g.async = true;
-              s.parentNode.insertBefore(g,s);
-              g.onload=function(){
-                window.chatwootSDK.run({
-                  websiteToken: 'SSTs1ZUx61iwNxxRktRyAhCA',
-                  baseUrl: BASE_URL
-                });
-              }
-            })(document,"script");
-          `
-        }}
-      />
     </div>
   );
 };

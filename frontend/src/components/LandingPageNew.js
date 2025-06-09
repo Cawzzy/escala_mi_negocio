@@ -614,13 +614,19 @@ const ContactSection = () => {
     threshold: 0.1
   });
 
+  const [showSuccess, setShowSuccess] = useState(false);
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   const onSubmit = async (data) => {
     // Here you would integrate with FormSubmit.co or your preferred form service
     console.log('Form data:', data);
-    alert('¡Gracias! Te contactaremos pronto.');
+    setShowSuccess(true);
     reset();
+    
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      setShowSuccess(false);
+    }, 5000);
   };
 
   return (

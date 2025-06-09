@@ -655,6 +655,22 @@ const ContactSection = () => {
             className="bg-white rounded-2xl shadow-lg p-8"
           >
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              {/* Success Message */}
+              <AnimatePresence>
+                {showSuccess && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center gap-3"
+                  >
+                    <CheckCircle className="w-5 h-5 text-green-600" />
+                    <span className="text-green-800 font-medium">
+                      ¡Gracias! Hemos recibido tu mensaje. Te contactaremos pronto.
+                    </span>
+                  </motion.div>
+                )}
+              </AnimatePresence>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Nombre

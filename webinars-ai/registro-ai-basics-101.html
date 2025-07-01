@@ -427,7 +427,7 @@
         const errorText = document.getElementById('errorText');
 
         // Your n8n webhook URL - replace with your actual webhook URL
-        const WEBHOOK_URL = 'https://n8n.escalaminegocio.com/webhook-test/81e775b6-2eab-46f6-93e7-0ebf5b4a37fb';
+        const WEBHOOK_URL = 'https://n8n.escalaminegocio.com/webhook-test/ai-basics-101';
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -461,7 +461,8 @@
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(data),
+                    mode: 'cors' // Explicitly set CORS mode
                 });
 
                 if (response.ok) {
@@ -473,7 +474,13 @@
                 }
             } catch (error) {
                 console.error('Registration error:', error);
-                showError('Hubo un problema al procesar tu registro. Por favor, verifica tu conexión e inténtalo de nuevo.');
+                
+                // More specific error messages
+                if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                    showError('Error de conexión: Problema de CORS o red. Verifica la configuración del webhook.');
+                } else {
+                    showError('Hubo un problema al procesar tu registro. Por favor, verifica tu conexión e inténtalo de nuevo.');
+                }
             } finally {
                 // Hide loading state
                 submitBtn.disabled = false;

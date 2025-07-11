@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La nueva era industrial no espera: la IA ya está transformando la producción</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Animated background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00f5ff, #8a2be2);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-1 { width: 100px; height: 100px; top: 20%; left: 10%; animation-delay: 0s; }
+        .shape-2 { width: 150px; height: 150px; top: 60%; right: 15%; animation-delay: 2s; }
+        .shape-3 { width: 80px; height: 80px; bottom: 20%; left: 20%; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            background: linear-gradient(45deg, #00f5ff, #8a2be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.5)); }
+            to { filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.8)); }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #fff 0%, #00f5ff 50%, #8a2be2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideInUp 1s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(45deg, #00f5ff, #8a2be2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.3);
+            animation: slideInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 245, 255, 0.5);
+        }
+
+        /* Registration Form */
+        .registration {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .registration::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0, 245, 255, 0.1), rgba(138, 43, 226, 0.1));
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            background: linear-gradient(45deg, #00f5ff, #8a2be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #00f5ff;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #00f5ff;
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .required {
+            color: #ff6b6b;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(45deg, #00f5ff, #8a2be2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.3);
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 245, 255, 0.5);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid #00f5ff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .success-message {
+            display: none;
+            background: linear-gradient(45deg, #00f5ff, #8a2be2);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .error-message {
+            display: none;
+            background: #ff6b6b;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            background: linear-gradient(45deg, #00f5ff, #8a2be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 245, 255, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .industrial-bg {
+            background: url('https://www.escalaminegocio.com/images/fabrica_webinar_iaindustria.png') no-repeat center center;
+            background-size: cover;
+            padding: 80px 20px;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+       }
+
+            .industrial-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* oscurece para legibilidad */
+            z-index: -1;
+            }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo">Escala mi Negocio - Campus</div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>La nueva era industrial no espera: la IA ya está transformando la producción</h1>
+                <p>La nueva era industrial ya comenzó: aprende cómo la IA está optimizando producción, mantenimiento y operaciones — y cómo prepararte para no quedarte atrás.</p>
+                <a href="#registro" class="cta-button">Reserva tu lugar ahora</a>
+            </div>
+        </section>
+
+<section class="features industrial-bg">
+  <div class="container">
+    <h2>¿Qué aprenderás en este taller?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🏭</div>
+        <h3>Preparación Digital Industrial</h3>
+        <p>Evalúa el nivel actual de digitalización en tu planta y qué necesitas para aplicar IA con impacto real.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔧</div>
+        <h3>Casos de IA en Producción y Mantenimiento</h3>
+        <p>Conoce ejemplos reales de cómo otras empresas están optimizando procesos con inteligencia artificial.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Primeros Pasos para Implementar IA</h3>
+        <p>Aprende qué sistemas debes conectar, qué datos necesitas y cómo empezar sin depender de grandes inversiones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+        <section class="registration" id="registro">
+            <div class="container">
+                <div class="form-container">
+                    <h2>Registrate Gratis</h2>
+                    <form id="registrationForm">
+                        <div class="form-group">
+                            <label for="name">Nombre completo <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Correo electrónico <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Empresa (opcional)</label>
+                            <input type="text" id="company" name="company" placeholder="Nombre de tu empresa">
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            Reservar mi lugar gratuito
+                        </button>
+                        
+                        <div class="loading" id="loading">
+                            <div class="spinner"></div>
+                            <p>Procesando tu registro...</p>
+                        </div>
+                        
+                        <div class="success-message" id="successMessage">
+                            <h3>¡Registro exitoso! 🎉</h3>
+                            <p>Te hemos enviado un correo de confirmación. ¡Nos vemos en el webinar!</p>
+                        </div>
+                        
+                        <div class="error-message" id="errorMessage">
+                            <h3>Error en el registro</h3>
+                            <p id="errorText">Hubo un problema al procesar tu registro. Por favor, inténtalo de nuevo.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Form handling
+        const form = document.getElementById('registrationForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const loading = document.getElementById('loading');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        const errorText = document.getElementById('errorText');
+
+        // Your n8n webhook URL - replace with your actual webhook URL
+        const WEBHOOK_URL = 'https://n8n.escalaminegocio.com/webhook/ai-industria-101';
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(form);
+            const data = {
+                webinar: 'La nueva era industrial no espera: la IA ya está transformando la producción',
+                name: formData.get('name'),
+                email: formData.get('email'),
+                company: formData.get('company') || '',
+                timestamp: new Date().toISOString()
+            };
+
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                showError('Por favor, ingresa un correo electrónico válido.');
+                return;
+            }
+
+            // Show loading state
+            submitBtn.disabled = true;
+            loading.style.display = 'block';
+            hideMessages();
+
+            try {
+                // Send to n8n webhook
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                    mode: 'cors' // Explicitly set CORS mode
+                });
+
+                if (response.ok) {
+                    // Success
+                    form.reset();
+                    showSuccess();
+                } else {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+            } catch (error) {
+                console.error('Registration error:', error);
+                
+                // More specific error messages
+                if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                    showError('Error de conexión: Problema de CORS o red. Verifica la configuración del webhook.');
+                } else {
+                    showError('Hubo un problema al procesar tu registro. Por favor, verifica tu conexión e inténtalo de nuevo.');
+                }
+            } finally {
+                // Hide loading state
+                submitBtn.disabled = false;
+                loading.style.display = 'none';
+            }
+        });
+
+        function showSuccess() {
+            hideMessages();
+            successMessage.style.display = 'block';
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function showError(message) {
+            hideMessages();
+            errorText.textContent = message;
+            errorMessage.style.display = 'block';
+            errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function hideMessages() {
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+        }
+
+        // Smooth scrolling for CTA button
+        document.querySelector('.cta-button').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('registro').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+
+        // Add floating animation to feature cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideInUp 0.6s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

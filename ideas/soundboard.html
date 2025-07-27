@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sound Art Board — Arte que mejora el sonido de tu casa</title>
+  <meta name="description" content="Panel acústico decorativo que reduce el eco, mejora la claridad de voz y mantiene tu estilo. Preventa limitada." />
+  <meta property="og:title" content="Sound Art Board — Preventa" />
+  <meta property="og:description" content="Arte que mejora el sonido de tu casa. Reduce el eco y mejora la voz en videollamadas." />
+  <meta property="og:image" content="https://tu-dominio.com/assets/hero-og.jpg" /> <!-- TODO -->
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#0ea5e9', // cyan-500
+              dark: '#0c4a6e',    // slate/cyan mix
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fuente opcional (Inter): descomenta si la quieres
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style> body{ font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto; } </style>
+  -->
+  <style>
+    html { scroll-behavior: smooth; }
+    /* offset para anclas con header fijo */
+    section[id] { scroll-margin-top: 96px; }
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#top" class="font-extrabold tracking-tight text-lg">Sound<span class="text-brand">Art</span>Board</a>
+      <nav class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="#porque" class="hover:text-brand">Por qué ahora</a>
+        <a href="#diferente" class="hover:text-brand">Qué lo hace distinto</a>
+        <a href="#packs" class="hover:text-brand">Packs</a>
+        <a href="#faq" class="hover:text-brand">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="#audio-demo" class="hidden sm:inline-flex rounded-full px-4 py-2 text-sm font-semibold border border-slate-300 hover:bg-slate-50">Escuchar antes/después</a>
+        <a href="#preorden" class="inline-flex rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-sky-600">Pre‑ordenar</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="relative pt-24 md:pt-28">
+      <!-- Background image -->
+      <div class="absolute inset-0 -z-10">
+        <div class="h-[70vh] md:h-[80vh] bg-center bg-cover"
+             style="background-image:url('assets/hero.webp');"></div> <!-- TODO: ruta a tu imagen -->
+        <!-- Overlay para legibilidad -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent"></div>
+      </div>
+
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="h-[70vh] md:h-[80vh] flex items-center">
+          <div class="max-w-2xl text-white">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+              Arte que mejora el sonido de tu casa.
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-white/90">
+              Panel acústico decorativo que <span class="font-semibold">reduce el eco</span>, mejora la
+              <span class="font-semibold">claridad de voz</span> y mantiene tu estilo.
+            </p>
+            <p class="mt-4 text-sm md:text-base text-white/80">
+              Instalación en <strong>15 minutos</strong> · <strong>2 puntos de fijación</strong> · <strong>Apto para renta</strong>
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="#preorden" class="inline-flex items-center rounded-full bg-brand px-6 py-3 text-base font-semibold text-white hover:bg-sky-600">
+                Pre‑ordenar ahora
+              </a>
+              <a href="#audio-demo" class="inline-flex items-center rounded-full bg-white/10 ring-1 ring-white/30 px-6 py-3 text-base font-semibold text-white hover:bg-white/20">
+                Escuchar antes/después
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Por qué ahora -->
+    <section id="porque" class="py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-extrabold">Por qué ahora (y por qué en casa)</h2>
+            <p class="mt-4 text-slate-700">
+              Vivir en departamentos crece cada año: más <strong>espacios compactos</strong>, <strong>pisos duros</strong> y <strong>paredes delgadas</strong>.
+              Resultado:
+            </p>
+            <ul class="mt-4 space-y-2 list-disc list-inside text-slate-700">
+              <li>Videollamadas con <strong>reverberación</strong>.</li>
+              <li>TV “metálica” y <strong>fatiga</strong>.</li>
+              <li>Conversaciones que <strong>rebotan</strong> y molestan a la pareja/vecinos.</li>
+            </ul>
+            <p class="mt-4 text-slate-700">
+              <strong>Sound Art Board</strong> ataca el problema donde ocurre: <strong>dentro del cuarto</strong>, absorbiendo las reflexiones que hacen que todo suene peor.
+            </p>
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-xl bg-[url('assets/why-now.webp')] bg-cover bg-center min-h-[280px]"> <!-- TODO -->
+            <div class="h-full w-full bg-gradient-to-tr from-slate-900/20 to-transparent"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qué lo hace distinto -->
+    <section id="diferente" class="py-20 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Qué hace distinto a Sound Art Board</h2>
+        <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-6 bg-white rounded-2xl border">
+            <h3 class="font-semibold">Absorción real</h3>
+            <p class="mt-2 text-slate-700">Reduce eco y fatiga (objetivo <strong>NRC ~0.85–0.95</strong> con núcleo de 50 mm + separación a muro).</p>
+          </div>
+          <div class="p-6 bg-white rounded-2xl border">
+            <h3 class="font-semibold">Pensado para departamentos</h3>
+            <p class="mt-2 text-slate-700"><strong>2 tornillos</strong>, tapado sencillo al mudarte.</p>
+          </div>
+          <div class="p-6 bg-white rounded-2xl border">
+            <h3 class="font-semibold">Se ve como arte</h3>
+            <p class="mt-2 text-slate-700">Impresiones de geometría celeste/astro/HD o color sólido minimalista.</p>
+          </div>
+          <div class="p-6 bg-white rounded-2xl border">
+            <h3 class="font-semibold">Mejor voz en llamadas</h3>
+            <p class="mt-2 text-slate-700">Tu micrófono capta <strong>menos sala</strong> y más <strong>tú</strong>.</p>
+          </div>
+          <div class="p-6 bg-white rounded-2xl border">
+            <h3 class="font-semibold">Módulo y escalable</h3>
+            <p class="mt-2 text-slate-700">Empieza con 1, mejora con un <strong>Duo</strong> o <strong>Living Set</strong> (2–4 piezas).</p>
+          </div>
+          <div class="p-6 bg-white rounded-2xl border">
+            <h3 class="font-semibold">Seguro y limpio</h3>
+            <p class="mt-2 text-slate-700">Tela <strong>ignífuga</strong>, sin fragancias, respaldo transpirable.</p>
+          </div>
+        </div>
+
+        <div class="mt-6 p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900">
+          <strong>Honestidad técnica:</strong> absorción ≠ “insonorización total”. Mejora el sonido dentro del cuarto; no bloquea bajos fuertes del vecino.
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section class="py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Cómo funciona (en simple)</h2>
+        <ol class="mt-6 grid md:grid-cols-3 gap-6 text-slate-700">
+          <li class="p-6 rounded-2xl border"><span class="font-semibold">1.</span> El sonido <strong>rebota</strong> en muros/piso/techo.</li>
+          <li class="p-6 rounded-2xl border"><span class="font-semibold">2.</span> El panel <strong>absorbe</strong> las reflexiones (voz y medios).</li>
+          <li class="p-6 rounded-2xl border"><span class="font-semibold">3.</span> Baja la <strong>reverberación</strong> y todo se siente más claro y calmado.</li>
+        </ol>
+        <p class="mt-6 text-slate-700">
+          <strong>Ingeniería clave:</strong> núcleo de <strong>lana mineral 50 mm (40–60 kg/m³)</strong> + <strong>separación de 25 mm</strong> al muro para ampliar la banda efectiva.
+        </p>
+      </div>
+    </section>
+
+    <!-- Ventajas para departamentos -->
+    <section class="py-20 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Ventajas específicas para departamentos</h2>
+        <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-6 bg-white rounded-2xl border">Instala y retira fácil (2 fijaciones tipo Z‑clip / cleat).</div>
+          <div class="p-6 bg-white rounded-2xl border">Ocupa pared, no piso (no invade área útil).</div>
+          <div class="p-6 bg-white rounded-2xl border">Combina con tu estilo (arte impreso o minimal).</div>
+          <div class="p-6 bg-white rounded-2xl border">Mejora inmediata en home office, sala y recámara.</div>
+          <div class="p-6 bg-white rounded-2xl border">A prueba de convivencia: menos eco = menos “gritos”.</div>
+          <div class="p-6 bg-white rounded-2xl border">Peso aprox. ~3.7 kg por panel (fácil de manejar).</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packs de preventa -->
+    <section id="packs" class="py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Packs de preventa</h2>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl border">
+            <h3 class="font-semibold text-lg">Solo (1 panel)</h3>
+            <p class="mt-2 text-slate-700">Ideal para escritorio o TV.</p>
+            <a href="#preorden" class="mt-4 inline-flex rounded-full bg-brand px-4 py-2 text-white font-semibold hover:bg-sky-600">Elegir Solo</a>
+          </div>
+          <div class="p-6 rounded-2xl border">
+            <h3 class="font-semibold text-lg">Duo (2 paneles)</h3>
+            <p class="mt-2 text-slate-700">Home office o sala pequeña.</p>
+            <a href="#preorden" class="mt-4 inline-flex rounded-full bg-brand px-4 py-2 text-white font-semibold hover:bg-sky-600">Elegir Duo</a>
+          </div>
+          <div class="p-6 rounded-2xl border">
+            <h3 class="font-semibold text-lg">Living Set (4 paneles)</h3>
+            <p class="mt-2 text-slate-700">Sala/comedor de planta abierta.</p>
+            <a href="#preorden" class="mt-4 inline-flex rounded-full bg-brand px-4 py-2 text-white font-semibold hover:bg-sky-600">Elegir Living Set</a>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-slate-600">
+          <strong>Preventa limitada.</strong> Reserva 100% reembolsable antes del envío. *(Ajusta esta política a la real.)*
+        </p>
+      </div>
+    </section>
+
+    <!-- Qué hay en la caja / Especificaciones -->
+    <section class="py-20 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold">Qué hay en la caja</h2>
+          <ul class="mt-6 space-y-2 list-disc list-inside text-slate-700">
+            <li>1 × Sound Art Board 1200×600×50 mm</li>
+            <li>Set de Z‑clips + taquetes</li>
+            <li>Guía de colocación en 15 minutos</li>
+            <li>Paño de mantenimiento</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold">Especificaciones</h2>
+          <ul class="mt-6 space-y-2 list-disc list-inside text-slate-700">
+            <li><strong>Núcleo:</strong> lana mineral 50 mm (40–60 kg/m³).</li>
+            <li><strong>Tela frontal:</strong> acústica, ignífuga (Trevira CS o eq.).</li>
+            <li><strong>Marco:</strong> pino 18×38 mm con escuadras.</li>
+            <li><strong>Separación a muro:</strong> 25 mm (espaciadores).</li>
+            <li><strong>Peso aprox.:</strong> ~3.7 kg.</li>
+            <li><strong>Acabados:</strong> Midnight Blue / Forest Green + arte astral o sólido.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resultados -->
+    <section class="py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Resultados que sentirás</h2>
+        <div class="mt-6 grid md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl border">Llamadas nítidas sin “eco de baño”.</div>
+          <div class="p-6 rounded-2xl border">TV/cine con diálogos claros a menor volumen.</div>
+          <div class="p-6 rounded-2xl border">Ambiente tranquilo para leer, meditar o dormir mejor.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparativa -->
+    <section class="py-20 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Comparativa rápida</h2>
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <div class="p-6 rounded-2xl border bg-white">
+            <h3 class="font-semibold">Sound Art Board vs Espuma decorativa</h3>
+            <ul class="mt-3 space-y-2 list-disc list-inside text-slate-700">
+              <li>Absorción <strong>real</strong> en voz/medios vs. efecto limitado.</li>
+              <li><strong>Estética premium</strong> vs. look de estudio barato.</li>
+              <li><strong>Durabilidad</strong> + instalación limpia vs. adhesivos que marcan.</li>
+            </ul>
+          </div>
+          <div class="p-6 rounded-2xl border bg-white">
+            <h3 class="font-semibold">Sound Art Board vs Paneles ranurados (slat)</h3>
+            <ul class="mt-3 space-y-2 list-disc list-inside text-slate-700">
+              <li><strong>Absorción</strong> prioritaria vs. estética/difusión.</li>
+              <li><strong>Menos piezas</strong> para notar el cambio vs. cobertura amplia.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audio demo -->
+    <section id="audio-demo" class="py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Escuchar antes/después</h2>
+        <p class="mt-4 text-slate-700">Demostración simple de una habitación antes y después de instalar 2 paneles.</p>
+        <div class="mt-6 flex flex-wrap items-center gap-4">
+          <button id="btnBefore" class="rounded-full border px-4 py-2 hover:bg-slate-50">▶ Antes</button>
+          <button id="btnAfter" class="rounded-full bg-brand text-white px-4 py-2 hover:bg-sky-600">▶ Después</button>
+          <audio id="audBefore" src="assets/audio-before.mp3"></audio> <!-- TODO -->
+          <audio id="audAfter"  src="assets/audio-after.mp3"></audio>  <!-- TODO -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-4xl font-extrabold">Preguntas frecuentes</h2>
+        <div class="mt-8 grid lg:grid-cols-2 gap-6">
+          <div class="p-6 rounded-2xl border bg-white">
+            <h3 class="font-semibold">¿Sirve para “no oír” al vecino?</h3>
+            <p class="mt-2 text-slate-700">No bloquea el sonido externo; mejora el interior del cuarto (eco/claridad).</p>
+          </div>
+          <div class="p-6 rounded-2xl border bg-white">
+            <h3 class="font-semibold">¿Puedo instalar si rento?</h3>
+            <p class="mt-2 text-slate-700">Sí. Son 2 perforaciones por panel; al retirarlo, masillas y listo.</p>
+          </div>
+          <div class="p-6 rounded-2xl border bg-white">
+            <h3 class="font-semibold">¿Cuántos necesito?</h3>
+            <p class="mt-2 text-slate-700">Home office: 1–2. Sala compacta: 2–4. Dormitorio: 1–2 detrás/contiguo a la cabecera.</p>
+          </div>
+          <div class="p-6 rounded-2xl border bg-white">
+            <h3 class="font-semibold">¿Cómo lo limpio?</h3>
+            <p class="mt-2 text-slate-700">Aspirado suave con cepillo. Sin químicos, sin fragancias.</p>
+          </div>
+          <div class="p-6 rounded-2xl border bg-white">
+            <h3 class="font-semibold">¿Medidas o arte personalizado?</h3>
+            <p class="mt-2 text-slate-700">Sí: 600×600 y 1200×1200, y arte personalizado (astro/HD).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final / Preorden -->
+    <section id="preorden" class="py-20">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-5xl font-extrabold">Tu casa merece sonar tan bien como se ve.</h2>
+        <p class="mt-4 text-slate-700">Preventa por lote limitado · Reserva reembolsable</p>
+        <div class="mt-6 flex flex-wrap justify-center gap-3">
+          <!-- Reemplaza href por tu link de checkout, Stripe o formulario -->
+          <a href="https://tu-checkout.com/preventa" class="inline-flex rounded-full bg-brand px-8 py-4 text-white font-semibold hover:bg-sky-600">Pre‑ordenar ahora</a>
+          <a href="#packs" class="inline-flex rounded-full border px-8 py-4 font-semibold hover:bg-slate-50">Ver packs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-sm text-slate-600 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Sound Art Board. Todos los derechos reservados.</p>
+      <div class="flex gap-4">
+        <a href="#faq" class="hover:text-brand">FAQ</a>
+        <a href="mailto:hola@tusitio.com" class="hover:text-brand">Contacto</a>
+        <a href="#" class="hover:text-brand">Política de privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Audio demo
+    const before = document.getElementById('audBefore');
+    const after  = document.getElementById('audAfter');
+    document.getElementById('btnBefore').addEventListener('click', () => {
+      after.pause(); after.currentTime = 0;
+      before.currentTime = 0; before.play();
+    });
+    document.getElementById('btnAfter').addEventListener('click', () => {
+      before.pause(); before.currentTime = 0;
+      after.currentTime = 0; after.play();
+    });
+  </script>
+</body>
+</html>
